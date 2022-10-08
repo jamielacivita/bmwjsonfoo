@@ -116,6 +116,54 @@ def extractChunk(filename):
 
     return chunk
 
+def getRangeFrom(filename="temp_221007-052009.html"):
+    rangeFrom = 0
+    with open(filename, "r",encoding="utf-8") as f:
+        lines = f.readlines()
+        f.close()
+
+    for l in lines:
+        if "rangeFrom" in l:
+            l = l.split(">")[1]
+            l = l.split("<")[0]
+            rangeFrom = l
+
+    return rangeFrom
+
+def getRangeTo(filename="temp_221007-052009.html"):
+    rangeTo = 0
+    with open(filename, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    f.close()
+
+    for l in lines:
+        if "rangeTo" in l:
+            l = l.split(">")[1]
+            l = l.split("<")[0]
+            rangeTo = l
+
+    return rangeTo
+
+
+def getTotalCount(filename="temp_221007-052009.html"):
+    totalcount = 0
+    with open(filename, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    f.close()
+
+    for l in lines:
+        if "totalcount" in l:
+            l = l.split(">")[1]
+            l = l.split("<")[0]
+            totalcount = l
+
+    return totalcount
+
+
+
+    #class ="totalcount" > 162 < / span >
+
+
 
 def main():
     print("Process File Foo.")

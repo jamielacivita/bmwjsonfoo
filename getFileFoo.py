@@ -34,7 +34,9 @@ def fetchURL():
     This is stub code that currently just returns a hardcoded url.
     :return: URL string.
     """
-    return "https://binghamton.craigslist.org/search/berkshire-ny/mca?lat=42.2899%26lon=-76.2076%26max_price=%26min_price=%26query=BMW%26search_distance=34"
+    #return "https://binghamton.craigslist.org/search/berkshire-ny/mca?lat=42.2899%26lon=-76.2076%26max_price=%26min_price=%26query=BMW%26search_distance=34"
+    return "https://bend.craigslist.org/search/mca"
+    #return "https://bend.craigslist.org/search/mca?s=120"
 
 
 def main():
