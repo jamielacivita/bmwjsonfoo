@@ -5,13 +5,18 @@ def getJson(filename="chunk.txt"):
     """
     Opens the (sanaztized) data file and converts the html within to .json.
     :param filename:
-    :return: at this point just text of the .json
+    :return: output file is data.json
     """
     with open(filename, "r", encoding="utf-8") as f:
         chunk = f.read()
     f.close()
     json_ = xmltojson.parse(chunk)
-    print(json_)
+
+    #write json data to file.
+    with open("data.json","w",encoding="utf-8") as f:
+        f.write(json_)
+    f.close()
+
 
 
 def saveChunk(chunk,  filename = "chunk.txt"):

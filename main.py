@@ -1,5 +1,6 @@
 import getFileFoo
 import processFileFoo
+import parseJsonFoo
 
 
 
@@ -29,8 +30,11 @@ def main():
 
     print("3. Display the data")
 
-
+def checkParseJSON():
+    parseJsonFoo.parseData()
 
 
 if __name__ == "__main__":
-    main()
+    #main()
+    checkParseJSON()
+

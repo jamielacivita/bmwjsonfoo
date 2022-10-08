@@ -1,3 +1,76 @@
+The root element is ["ul"]
+It is a dictionary with 4 keys
+    @class
+    @id
+    h4
+    li
+
+    @class
+
+    @id
+
+    h4 : This can be ignored.
+
+    li :    this is a list of dictionaries.
+            each dictionary is a ROW of data.
+
+        ROW has 4 keys : class, data_pid, a, div
+
+        class :
+
+        data_pid
+
+        a : this is a dictionary
+
+        div : this is a dictionary
+
+            a (dictionary) has 5 keys : @href, @data_id, @class, @id and #text
+
+                @href : holds the URL for the post itself
+                    ex : 'https://binghamton.craigslist.org/mcy/d/endicott-2014-yamaha-star-900cc/7533748871.html'
+                    hrefText = data_dict["ul"]["li"][rowNumber]["div"]["h3"]["a"]["@href"]
+
+                @data_id
+
+                @class
+
+                @id : this holds the id of the post
+                    ex: postid_7533748871
+                    data_dict["ul"]["li"][rowNumber]["div"]["h3"]["a"]["@id"]
+
+                #text : this holds the text string of the the row
+                    ex : "2014 yamaha v star 900cc immaculate condition 2200 mi."
+                    data_dict["ul"]["li"][rowNumber]["div"]["h3"]["a"]["#text"]
+
+            div (dictionary) has 4 keys : class, span, time, h3
+
+                class :
+
+
+
+                span : (list)
+
+                time : (dict) with 4 keys : '@class', '@datetime', '@title', '#text'
+                    @class :    prints out the class for this bit of data
+                                ex : result-date
+                                data_dict["ul"]["li"][0]["div"]["time"]["@class"]
+
+                    @datetime : prints a human readable version of the date and time of the post
+                                ex : 2022-10-05 10:30
+                                data_dict["ul"]["li"][0]["div"]["time"]["@datetime"]
+
+                    @title :
+
+                    #text :     shows the human-readable, short date
+                                ex : Oct  5
+                                data_dict["ul"]["li"][0]["div"]["h3"]["a"]["#text"]
+                h3: unknown
+
+
+
+
+
+
 dict_keys(['@class'
  'span'
  'time'
@@ -49,3 +122,6 @@ dict_keys(['@class'
 	 
 	 
 print(x["html"]["body"]["ul"]["li"][0]["div"]["h3"]["a"]["#text"])
+
+
+
