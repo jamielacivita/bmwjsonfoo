@@ -1,37 +1,33 @@
-import xmltojson
-import json
-import xmltodict
+import getFileFoo
+import processFileFoo
 
 
 
 def main():
-    print("In Main.")
+    """
+    The main function for this program acts as the controller.
+    :return: Nothing.
+    """
+    debug = False
+    if (debug) : print("In Main - the controller function.")
+    if (debug) : print("1. Get URL - for now returns a hardcoded URL.")
+    URL = getFileFoo.fetchURL()
 
-    with open("BMW5.html", "r", encoding="utf-8") as f:
-        html = f.read()
-        json_ = xmltojson.parse(html)
-        #d = xmltodict.parse(html)
-        #print(json_)
-        x = json.loads(json_)
-        print(x["html"]["body"]["ul"]["li"])
-        print(type(x["html"]["body"]["ul"]["li"]))
-        print(len(x["html"]["body"]["ul"]["li"]))
-        print(type(x["html"]["body"]["ul"]["li"][0]))
+    getFileFoo.fetchHTML(URL)
+    #input : URL
+    #endstate : raw html file downloaded and saved.
 
-        print(x["html"]["body"]["ul"]["li"][0])
-        print(x["html"]["body"]["ul"]["li"][0]["a"].keys())
-        print(x["html"]["body"]["ul"]["li"][0]["a"]["span"].keys())
-        print(x["html"]["body"]["ul"]["li"][0]["a"]["span"]["#text"])
+    if (debug) : print("3. Process Data")
+    #copy out just the relevant section from the downloaded html file.
+    chunk = processFileFoo.extractChunk("temp_221007-052009.html")
+    #save the relevant section as chunk.txt
+    processFileFoo.saveChunk(chunk)
+    #do some sanatizing on chunk.txt so it is ready to be parsed to .json.
+    processFileFoo.sanatizeChunk()
+    #convert the contents of chunk.txt into .json.
+    processFileFoo.getJson()
 
-        #for n in range(0,5):
-            #print(x["html"]["body"]["ul"]["li"][n]["a"]["span"]["#text"])
-
-
-
-
-
-
-
+    print("3. Display the data")
 
 
 

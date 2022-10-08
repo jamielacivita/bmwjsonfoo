@@ -1,0 +1,51 @@
+dict_keys(['@class'
+ 'span'
+ 'time'
+ 'h3'])
+{	'@class': 'result-info'
+
+	 'span': 
+		[{'@class': 'icon icon-star'
+		  '@role': 'button'
+		  'span': 
+			{'@class': 'screen-reader-text'
+			'#text': 'favorite this post'}}
+	 
+			{'@class': 'result-meta'
+			'span': [{'@class': 'result-price'
+			'#text': '$6800'}
+			
+	 {'@class': 'result-hood'
+	 '#text': '(Park City)'}
+	 {'@class': 'result-tags'
+	 'span': {'@class': 'pictag'
+	 '#text': 'pic'}}
+	 {'@class': 'banish icon icon-trash'
+	 '@role': 'button'
+	 'span': {'@class': 'screen-reader-text'
+	 '#text': 'hide this posting'}}
+	 {'@class': 'unbanish icon icon-trash red'
+	 '@role': 'button'
+	 '@aria-hidden': 'true'}]
+	 'a': {'@href': '#'
+	 '@class': 'restore-link'
+	 'span': [{'@class': 'restore-narrow-text'
+	 '#text': 'restore'}
+	 {'@class': 'restore-wide-text'
+	 '#text': 'restore this posting'}]}}]
+ 
+	 'time': {'@class': 'result-date'
+	 '@datetime': '2022-09-16 10:46'
+	 '@title': 'Fri 16 Sep 10:46:56 AM'
+	 '#text': 'Sep 16'}
+ 
+ 
+	 'h3': {'@class': 'result-heading'
+	 'a': {'@href': 'https://saltlakecity.craigslist.org/mcy/d/park-city-2010-bmw-f800gs/7534601083.html'
+	 '@data-id': '7534601083'
+	 '@class': 'result-title hdrlnk'
+	 '@id': 'postid_7534601083'
+	 '#text': '2010 BMW F800GS'}}}
+	 
+	 
+print(x["html"]["body"]["ul"]["li"][0]["div"]["h3"]["a"]["#text"])

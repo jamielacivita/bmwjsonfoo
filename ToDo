@@ -1,0 +1,20 @@
+### ToDo
+() Write method to parse out extra html.
+() Write method to download html.
+() Finish writing up details of schema 
+
+This is what you are looking for :   <ul class="rows" id="search-results">
+
+This is how the section should end :                 
+
+
+span : span class="restore-wide-text">restore this posting
+anchor tag : a
+end span :
+end div :
+end li : 
+
+oneBout.html shows the text returned from a single search returned item i.e. BMW 750GS.
+
+https://ithaca.craigslist.org/search/mca?postal=14850&query=BMW%20F750GS&search_distance=50
+returns 3 results
